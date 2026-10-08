@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life in 2050 — The Future City</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Shared gradient used by the circular progress rings -->
+<svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00f0ff"/><stop offset=".5" stop-color="#3b82f6"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+</defs></svg>
+
+<canvas id="fx"></canvas>
+<div class="grid"></div>
+
+<!-- ============ PAGE 1 : FUTURE ACCESS ============ -->
+<main id="page1" class="gate">
+  <div class="glass card-gate">
+    <p class="tiny">SECURE FUTURE ACCESS • 2050</p>
+    <h1 class="glow">ENTER THE FUTURE</h1>
+    <p class="sub">Your journey to the year 2050 begins here.</p>
+    <form id="form" novalidate>
+      <label for="name">FULL NAME</label>
+      <input id="name" type="text" placeholder="e.g. Devdeep Rajbhar" autocomplete="name">
+      <span class="err" id="e-name"></span>
+      <label for="mobile">MOBILE NUMBER</label>
+      <input id="mobile" type="tel" placeholder="e.g. 9876543210" autocomplete="tel">
+      <span class="err" id="e-mobile"></span>
+      <label for="email">EMAIL ADDRESS</label>
+      <input id="email" type="email" placeholder="you@example.com" autocomplete="email">
+      <span class="err" id="e-email"></span>
+      <button class="btn" type="submit">ENTER 2050 →</button>
+    </form>
+  </div>
+</main>
+
+<!-- Loading / transition screen -->
+<div id="loader" class="overlay hidden"><div class="spin"></div><p class="tiny">INITIALIZING FUTURE LINK...</p></div>
+
+<!-- ============ PAGE 2 : PORTAL INTRO ============ -->
+<div id="intro" class="overlay hidden">
+  <div class="portal"></div>
+  <div class="intro-text">
+    <div class="y2050">2050</div>
+    <div class="wel">WELCOME TO THE FUTURE</div>
+    <div class="nm" id="introName"></div>
+  </div>
+  <button id="skip" class="skip">SKIP INTRO →</button>
+</div>
+
+<!-- ============ PAGE 2 : MAIN SITE ============ -->
+<div id="site" class="hidden">
+  <nav id="nav">
+    <a href="#home" class="brand">2050<span>CITY</span></a>
+    <button id="burger" aria-label="Menu">☰</button>
+    <ul id="links">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#ai">AI &amp; ROBOTS</a></li>
+      <li><a href="#transport">TRANSPORT</a></li>
+      <li><a href="#energy">GREEN ENERGY</a></li>
+      <li><a href="#lifestyle">LIFESTYLE</a></li>
+      <li><a href="#about">ABOUT</a></li>
+    </ul>
+    <div class="hud"><span id="clock">YEAR: 2050</span><span class="dot">● CITY NETWORK ONLINE</span></div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="hero-text">
+      <p class="tiny" id="greet"></p>
+      <h1 class="glow">WELCOME TO 2050</h1>
+      <p class="sub">Where technology, humanity and nature become one.</p>
+      <p class="msg">The city of tomorrow is no longer a dream. Explore how humanity lives, travels, works and grows in 2050.</p>
+      <a class="btn" href="#ai">EXPLORE THE CITY →</a>
+      <a class="btn ghost" href="#ai">EXPLORE 2050 ↓</a>
+    </div>
+    <div class="drone"><i></i></div>
+    <div class="car"></div>
+    <div class="city">
+      <div class="b" style="height:42%;width:7%"></div><div class="b g" style="height:58%;width:6%"></div>
+      <div class="b" style="height:78%;width:5%"></div><div class="b s" style="height:48%;width:8%"></div>
+      <div class="b" style="height:92%;width:6%"></div><div class="b g" style="height:64%;width:7%"></div>
+      <div class="b" style="height:70%;width:5%"></div><div class="b" style="height:100%;width:5%"></div>
+      <div class="b g" style="height:55%;width:7%"></div><div class="b s" style="height:40%;width:7%"></div>
+      <div class="b" style="height:84%;width:6%"></div><div class="b" style="height:50%;width:6%"></div>
+      <div class="b g" style="height:68%;width:6%"></div><div class="b" style="height:36%;width:7%"></div>
+      <div class="road"></div>
+    </div>
+  </header>
+
+  <!-- AI & ROBOTS -->
+  <section id="ai" class="sec">
+    <h2 class="reveal">AI &amp; ROBOTS</h2><p class="sub reveal">Your intelligent companions in everyday life.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="ico">🩺</div><h3>AI Healthcare</h3><p>AI monitors health, assists doctors and helps detect diseases early.</p></div>
+      <div class="card reveal"><div class="ico">🤖</div><h3>Home Robots</h3><p>Robots help with cleaning, cooking, deliveries and everyday tasks.</p></div>
+      <div class="card reveal"><div class="ico">🧠</div><h3>AI Education</h3><p>Personal AI tutors adapt lessons to every student's learning style.</p></div>
+      <div class="card reveal"><div class="ico">💬</div><h3>Smart Assistants</h3><p>AI assistants manage schedules, communication, transportation and daily tasks.</p></div>
+    </div>
+  </section>
+
+  <!-- TRANSPORT -->
+  <section id="transport" class="sec">
+    <h2 class="reveal">THE WAY WE MOVE</h2><p class="sub reveal">Transportation without limits.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="ico">🚗</div><h3>Flying Cars</h3><p>Personal aerial vehicles reduce road congestion.</p></div>
+      <div class="card reveal"><div class="ico">🚆</div><h3>Hyper Smart Transit</h3><p>AI-controlled public transportation automatically adjusts routes according to demand.</p></div>
+      <div class="card reveal"><div class="ico">🚁</div><h3>Autonomous Drones</h3><p>Drones deliver packages and provide emergency assistance.</p></div>
+      <div class="card reveal"><div class="ico">⚡</div><h3>Electric Mobility</h3><p>Clean autonomous vehicles operate using renewable energy.</p></div>
+    </div>
+    <div class="stage glass reveal"><div class="lane"></div><div class="car2" id="car2"></div></div>
+    <button class="btn" id="launch">LAUNCH TRANSPORT</button>
+  </section>
+
+  <!-- GREEN ENERGY -->
+  <section id="energy" class="sec">
+    <h2 class="reveal">POWERING TOMORROW</h2><p class="sub reveal">A city designed to live with nature.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="ico">☀</div><h3>Solar Energy</h3><p>Buildings generate electricity through integrated solar surfaces.</p></div>
+      <div class="card reveal"><div class="ico">🌬</div><h3>Wind Energy</h3><p>Smart turbines provide clean renewable power.</p></div>
+      <div class="card reveal"><div class="ico">🏢</div><h3>Smart Buildings</h3><p>Buildings automatically control lighting, temperature and energy consumption.</p></div>
+      <div class="card reveal"><div class="ico">🌱</div><h3>Vertical Forests</h3><p>Skyscrapers include trees, gardens and natural ecosystems.</p></div>
+    </div>
+    <div class="glass energy reveal">
+      <p class="tiny">CITY ENERGY STATUS: 98% RENEWABLE</p>
+      <div class="ring big"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="bar" data-pct="98" cx="60" cy="60" r="52"/></svg><div class="val"><b data-count="98">0</b>%<small>RENEWABLE ENERGY</small></div></div>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section id="lifestyle" class="sec">
+    <h2 class="reveal">LIFE IN 2050</h2><p class="sub reveal">How people live, work and connect.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="ico">🏠</div><h3>HOME</h3><p>Smart homes automatically adapt to the residents.</p></div>
+      <div class="card reveal"><div class="ico">💼</div><h3>WORK</h3><p>People work from smart offices, virtual environments and remote locations.</p></div>
+      <div class="card reveal"><div class="ico">🎓</div><h3>EDUCATION</h3><p>Immersive virtual classrooms make learning more interactive.</p></div>
+      <div class="card reveal"><div class="ico">❤️</div><h3>HEALTH</h3><p>Wearable technology and AI help people monitor their wellbeing.</p></div>
+      <div class="card reveal"><div class="ico">🎮</div><h3>ENTERTAINMENT</h3><p>Virtual and augmented reality become part of everyday experiences.</p></div>
+      <div class="card reveal"><div class="ico">🤝</div><h3>COMMUNITY</h3><p>Technology connects people while smart cities create safer and cleaner communities.</p></div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CITY AI -->
+  <section id="cityai" class="sec center">
+    <div class="glass ai-panel reveal">
+      <p class="tiny">CITY AI STATUS</p>
+      <h2 id="aiStatus" class="off">OFFLINE</h2>
+      <button class="btn" id="activate">ACTIVATE CITY AI</button>
+      <button class="btn ghost small" id="mute">🔊 SOUND ON</button>
+      <div id="aiMsg" class="aimsg"></div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dash" class="sec">
+    <h2 class="reveal">CITY STATUS</h2><p class="sub reveal">Fictional UI data for the concept — not real-world statistics.</p>
+    <div class="cards dash">
+      <div class="glass stat reveal"><p class="tiny">ENERGY</p><div class="ring"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="bar" data-pct="98" cx="60" cy="60" r="52"/></svg><div class="val"><b data-count="98">0</b>%</div></div><p>Renewable</p></div>
+      <div class="glass stat reveal"><p class="tiny">TRAFFIC</p><div class="ring"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="bar" data-pct="12" cx="60" cy="60" r="52"/></svg><div class="val"><b data-count="12">0</b>%</div></div><p>Congestion</p></div>
+      <div class="glass stat reveal"><p class="tiny">AIR QUALITY</p><div class="word">EXCELLENT</div><p>Clean skies</p></div>
+      <div class="glass stat reveal"><p class="tiny">AI NETWORK</p><div class="word ok">ONLINE</div><p>All systems stable</p></div>
+      <div class="glass stat reveal"><p class="tiny">WATER</p><div class="ring"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle class="bar" data-pct="96" cx="60" cy="60" r="52"/></svg><div class="val"><b data-count="96">0</b>%</div></div><p>Recycled</p></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="sec">
+    <h2 class="reveal">ABOUT THE FUTURE</h2>
+    <p class="sub reveal" style="max-width:760px;margin:0 auto 30px">Life in 2050 is an imaginative exploration of how technology, artificial intelligence, sustainable energy and human creativity could shape the cities of tomorrow. This website presents a fictional vision of a connected, intelligent and environmentally conscious future.</p>
+    <div class="glass creator reveal">
+      <div class="potato"><span>TP</span></div>
+      <p class="tiny">CREATED BY</p>
+      <h3>TEAM POTATO</h3>
+      <p class="glow2">BCADS 13</p>
+      <p class="tiny">PIXEL PERSONA — Digital Fine-Art &amp; Frontend Designing Challenge</p>
+    </div>
+  </section>
+
+  <footer>
+    <h3>LIFE IN 2050 — THE FUTURE CITY</h3>
+    <p>Designed &amp; Created by Team Potato • BCADS 13</p>
+    <p class="flinks"><a href="#home">Home</a> | <a href="#ai">AI &amp; Robots</a> | <a href="#transport">Transport</a> | <a href="#energy">Green Energy</a> | <a href="#lifestyle">Lifestyle</a> | <a href="#about">About</a></p>
+    <p class="tiny">© 2050 Future City Concept</p>
+    <button class="btn small" id="top">BACK TO TOP ↑</button>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
